@@ -25,10 +25,16 @@ npm install
   DATABASE_URL="mysql://USERNAME:PASWWORD@localhost:3306/notes-api-2"
 JWT_KEY="123"
   ```
+  Using Password
 ```bash
 DATABASE_URL="mysql://root:toor@localhost:3306/notes-api-2"
 JWT_KEY="123"
   ```
+  No Password
+```bash
+DATABASE_URL="mysql://root:@localhost:3306/notes-api-2"
+JWT_KEY="123"
+```
 Run Backend
 ```bash
 npm run dev
