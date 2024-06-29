@@ -6,7 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
   Future<bool> _checkToken() async {
-    await Future.delayed(const Duration(seconds: 2));
+    await Future.delayed(const Duration(seconds: 3));
     SharedPreferences prefs = await SharedPreferences.getInstance();
     String? token = prefs.getString('accessToken');
     return token != null;
