@@ -36,7 +36,7 @@ class _LoginScreenState extends State<LoginScreen> {
         isLoading = true;
       });
       final response = await Dio().post(
-        'http://192.168.100.6:3000/login',
+        'http://localhost:3000/login',
         data: {
           'username': username.text,
           'password': password.text,

@@ -24,7 +24,7 @@ class _GetProfileScreenState extends State<GetProfileScreen> {
   void getProfile() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     try {
-      final response = await Dio().get("http://192.168.100.6:3000/profile",
+      final response = await Dio().get("http://localhost:3000/profile",
           options: Options(headers: {
             'Authorization': 'Bearer ${prefs.getString('accessToken')}'
           }));

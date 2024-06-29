@@ -45,7 +45,7 @@ class _CreateNotesScreenState extends State<CreateNotesScreen> {
         isLoading = true;
       });
       final response = await Dio().post(
-        'http://192.168.100.6:3000/notes',
+        'http://localhost:3000/notes',
         data: {
           'name': name,
           'description': description,

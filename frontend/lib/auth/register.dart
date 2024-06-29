@@ -41,7 +41,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     });
     try {
       final response =
-          await Dio().post('http://192.168.100.6:3000/register', data: {
+          await Dio().post('http://localhost:3000/register', data: {
         'username': username.text,
         'fullname': fullname.text,
         'password': password.text,

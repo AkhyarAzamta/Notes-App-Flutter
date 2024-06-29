@@ -30,7 +30,7 @@ class _GetNotesScreenState extends State<GetNotesScreen> {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     try {
       final dio = Dio();
-      final url = 'http://192.168.100.6:3000/notes?page=$pageKey&page_size=5';
+      final url = 'http://localhost:3000/notes?page=$pageKey&page_size=5';
       final response = await dio.get(url,
           options: Options(headers: {
             'Authorization': 'Bearer ${prefs.getString('accessToken')}'
@@ -94,7 +94,7 @@ class _GetNotesScreenState extends State<GetNotesScreen> {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     try {
       final response = await Dio().delete(
-        'http://192.168.100.6:3000/notes/$id',
+        'http://localhost:3000/notes/$id',
         options: Options(headers: {
           'Authorization': 'Bearer ${prefs.getString('accessToken')}'
         }),

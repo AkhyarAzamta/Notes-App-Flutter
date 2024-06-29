@@ -44,7 +44,7 @@ class _UpdateNoteScreenState extends State<UpdateNoteScreen> {
     });
     try {
       final response = await Dio().get(
-        'http://192.168.100.6:3000/notes/${widget.noteId}',
+        'http://localhost:3000/notes/${widget.noteId}',
         options: Options(
           headers: {
             'Authorization': 'Bearer ${prefs.getString('accessToken')}',
@@ -77,7 +77,7 @@ class _UpdateNoteScreenState extends State<UpdateNoteScreen> {
         isLoading = true;
       });
       final response = await Dio().patch(
-        'http://192.168.100.6:3000/notes/${widget.noteId}',
+        'http://localhost:3000/notes/${widget.noteId}',
         data: {
           'name': name,
           'description': description,
