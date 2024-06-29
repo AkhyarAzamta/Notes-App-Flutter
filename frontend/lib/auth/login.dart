@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:notes_app_flutter/auth/register.dart';
+import 'package:notes_app_flutter/notes/get_notes.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -44,24 +45,11 @@ class _LoginScreenState extends State<LoginScreen> {
       print(response.data);
       if (response.statusCode == 200) {
         setAccessToken(response.data['access_token']);
-        showDialog(
-          context: context,
-          builder: (BuildContext context) {
-            return AlertDialog(
-              title: const Text('Success'),
-              content: const Text(
-                'Login berhasil',
-              ),
-              actions: <Widget>[
-                TextButton(
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
-                  child: const Text('OK'),
-                ),
-              ],
-            );
-          },
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const GetNotesScreen(),
+          ),
         );
       }
     } catch (e) {
